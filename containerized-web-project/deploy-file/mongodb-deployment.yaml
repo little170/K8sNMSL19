@@ -1,0 +1,39 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    name: mongodb
+  name: mongodb-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: mongodb
+    spec:
+      containers:
+      - image: mongo
+        name: mongodb
+        ports:
+        - name: mongodb
+          containerPort: 27017
+          hostPort: 27017
+        volumeMounts:
+          - name: mongodb-storage 
+            mountPath: /data/db
+      volumes:
+        - name: mongodb-storage
+          emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: mongodb
+  name: mongodb
+spec:
+  ports:
+    - port: 27017
+      targetPort: 27017
+  selector:
+    app: mongodb
