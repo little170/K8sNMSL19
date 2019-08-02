@@ -1,2 +1,2 @@
-# CloudProg2018
-Hi, this is example for Cloud Programming course!
+# K8s Tutorial
+This is an example for NMSL members!
