@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: react-frontend
-        image: jackfantasy/react-frontend:v1
+        image: little170/react-frontend:v1
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
