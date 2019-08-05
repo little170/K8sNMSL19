@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: node-backend
-        image: jackfantasy/node-backend:v1
+        image: little170/node-backend:v1
         imagePullPolicy: Always
         ports:
         - containerPort: 6200
